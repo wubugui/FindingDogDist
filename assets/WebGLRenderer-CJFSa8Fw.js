@@ -1,0 +1,1 @@
+import"./Geometry-MFRJ-jpk.js";import{r as e}from"./index-DiFCX31x.js";export{e as WebGLRenderer};
