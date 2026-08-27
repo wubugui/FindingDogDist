@@ -1,0 +1,205 @@
+{
+  "id": "城隍庙夜",
+  "name": "城隍庙 · 夜",
+  "worldWidth": 1376.0,
+  "worldHeight": 768.0,
+  "camera": {
+    "zoom": 1.25,
+    "pixelsPerUnit": 1.0
+  },
+  "backgrounds": [
+    {
+      "image": "background.png",
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "bgm": "bgm_placeholder_dark_shadows",
+  "ambientSounds": [
+    "amb_chenghuang_temple_loop"
+  ],
+  "spawnPoint": {
+    "x": 700.0,
+    "y": 660.0
+  },
+  "spawnPoints": {
+    "entry": {
+      "x": 700.0,
+      "y": 660.0
+    }
+  },
+  "zones": [
+    {
+      "id": "z_守夜进庙",
+      "polygon": [
+        {
+          "x": 420.0,
+          "y": 520.0
+        },
+        {
+          "x": 980.0,
+          "y": 520.0
+        },
+        {
+          "x": 980.0,
+          "y": 640.0
+        },
+        {
+          "x": 420.0,
+          "y": 640.0
+        }
+      ],
+      "conditions": [
+        {
+          "narrative": "wrap_守夜",
+          "state": "not_started"
+        }
+      ],
+      "onEnter": [
+        {
+          "type": "emitNarrativeSignal",
+          "params": {
+            "sourceType": "zone",
+            "sourceId": "城隍庙夜:z_守夜进庙",
+            "signal": "shouye_intro_entered"
+          }
+        }
+      ]
+    }
+  ],
+  "hotspots": [
+    {
+      "id": "hs_无名女尸",
+      "type": "inspect",
+      "label": "停着的无名女尸",
+      "x": 718.4,
+      "y": 596.9,
+      "interactionRange": 80.0,
+      "displayImage": {
+        "image": "/resources/runtime/images/corpses/demo/chenghuang_unknown_woman.png",
+        "worldWidth": 250.0,
+        "worldHeight": 130.0,
+        "spriteSort": "back"
+      },
+      "collisionPolygon": [
+        {
+          "x": -115.0,
+          "y": -55.0
+        },
+        {
+          "x": 115.0,
+          "y": -55.0
+        },
+        {
+          "x": 115.0,
+          "y": -5.0
+        },
+        {
+          "x": -115.0,
+          "y": -5.0
+        }
+      ],
+      "collisionPolygonLocal": true,
+      "data": {
+        "graphId": "寻狗_守夜看女尸"
+      }
+    },
+    {
+      "id": "hs_长明灯",
+      "type": "inspect",
+      "label": "长明灯 · 续点油",
+      "x": 420.0,
+      "y": 300.0,
+      "interactionRange": 70.0,
+      "data": {
+        "graphId": "寻狗_守夜续油"
+      }
+    },
+    {
+      "id": "hs_供桌",
+      "type": "inspect",
+      "label": "供桌",
+      "x": 760.0,
+      "y": 240.0,
+      "interactionRange": 70.0,
+      "data": {
+        "graphId": "寻狗_城隍庙供桌"
+      }
+    },
+    {
+      "id": "hs_坐下想东西",
+      "type": "inspect",
+      "label": "找个角落坐下",
+      "x": 980.0,
+      "y": 480.0,
+      "interactionRange": 70.0,
+      "conditions": [
+        {
+          "narrative": "wrap_守夜",
+          "state": "oil_added"
+        }
+      ],
+      "conditionHidesEntity": true,
+      "data": {
+        "graphId": "寻狗_守夜坐下"
+      }
+    },
+    {
+      "id": "T_出庙",
+      "type": "transition",
+      "label": "出庙",
+      "x": 700.0,
+      "y": 720.0,
+      "interactionRange": 56.0,
+      "data": {
+        "targetScene": "雾津街头",
+        "targetSpawnPoint": "from_event"
+      }
+    }
+  ],
+  "npcs": [],
+  "depthConfig": {
+    "depth_map": "raw_depth_rg.png",
+    "collision_map": "collision.png",
+    "M": {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.766044443118978,
+          -0.6427876096865393
+        ],
+        [
+          0.0,
+          0.6427876096865393,
+          0.766044443118978
+        ]
+      ],
+      "ppu": 491.52,
+      "cx": 1024.0,
+      "cy": 571.5
+    },
+    "depth_mapping": {
+      "invert": false,
+      "scale": 3.633725222539902,
+      "offset": -3.2820693088531496
+    },
+    "shader": {
+      "depth_per_sy": 0.0017071525699407552
+    },
+    "collision": {
+      "x_min": -2.0833334922790527,
+      "z_min": -2.163564492950801,
+      "cell_size": 0.026155284074296084,
+      "grid_width": 160,
+      "grid_height": 154,
+      "height_offset": 0.0
+    },
+    "depth_tolerance": 0.05,
+    "floor_offset": 0.0
+  }
+}

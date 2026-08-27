@@ -1,0 +1,27 @@
+[
+  {
+    "id": "xungou",
+    "name": "寻狗记 · Demo",
+    "type": "main"
+  },
+  {
+    "id": "opening",
+    "name": "序章",
+    "type": "main"
+  },
+  {
+    "id": "支线-铁环",
+    "name": "支线-铁环去向",
+    "type": "side"
+  },
+  {
+    "id": "支线-抓水猴子",
+    "name": "支线-抓水猴子",
+    "type": "side"
+  },
+  {
+    "id": "背尸零活",
+    "name": "背尸零活",
+    "type": "side"
+  }
+]

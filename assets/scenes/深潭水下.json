@@ -1,0 +1,103 @@
+{
+  "id": "深潭水下",
+  "name": "深潭水下",
+  "worldWidth": 1376.0,
+  "worldHeight": 768.0,
+  "camera": {
+    "zoom": 1.0,
+    "pixelsPerUnit": 1.0
+  },
+  "backgrounds": [
+    {
+      "image": "background.png",
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "ambientSounds": [
+    "阴风"
+  ],
+  "spawnPoint": {
+    "x": 688,
+    "y": 610
+  },
+  "spawnPoints": {
+    "center": {
+      "x": 688,
+      "y": 610
+    }
+  },
+  "zones": [
+    {
+      "id": "new_zone_0",
+      "polygon": [
+        {
+          "x": 406.0,
+          "y": 451.1
+        },
+        {
+          "x": 606.0,
+          "y": 451.1
+        },
+        {
+          "x": 606.0,
+          "y": 551.1
+        },
+        {
+          "x": 406.0,
+          "y": 551.1
+        }
+      ],
+      "smell": {
+        "scent": "yin",
+        "intensity": 60,
+        "flicker": true
+      }
+    }
+  ],
+  "hotspots": [],
+  "depthConfig": {
+    "depth_map": "raw_depth_rg.png",
+    "collision_map": "collision.png",
+    "M": {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.7071067811865476,
+          -0.7071067811865475
+        ],
+        [
+          0.0,
+          0.7071067811865475,
+          0.7071067811865476
+        ]
+      ],
+      "ppu": 302.72,
+      "cx": 688.0,
+      "cy": 384.0
+    },
+    "depth_mapping": {
+      "invert": false,
+      "scale": 2.898631897163391,
+      "offset": -1.9190211130142212
+    },
+    "shader": {
+      "depth_per_sy": 0.0033033826638477794
+    },
+    "collision": {
+      "x_min": -2.2727272510528564,
+      "z_min": -1.8898002025502667,
+      "cell_size": 0.02853192923203954,
+      "grid_width": 160,
+      "grid_height": 132,
+      "height_offset": 0.0
+    },
+    "depth_tolerance": 0.05,
+    "floor_offset": 0.0
+  }
+}

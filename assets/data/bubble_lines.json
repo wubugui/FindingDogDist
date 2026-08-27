@@ -1,0 +1,59 @@
+{
+  "tuning": {
+    "globalMinIntervalMs": 4000,
+    "perSpeakerMinIntervalMs": 12000,
+    "maxConcurrent": 2,
+    "audibleRange": 900
+  },
+  "lineSets": [
+    {
+      "id": "关二狗_普通状态_通用",
+      "speaker": {
+        "kind": "player"
+      },
+      "lines": [
+        {
+          "text": "二分法"
+        }
+      ],
+      "when": {
+        "all": [
+          {
+            "narrative": "wrapper_主线_崖墓任务发布",
+            "state": "state_2",
+            "reached": true
+          },
+          {
+            "not": {
+              "all": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "关二狗_普通状态_通用1",
+      "speaker": {
+        "kind": "player"
+      },
+      "lines": [
+        {
+          "text": "哈——啊（哈欠）"
+        },
+        {
+          "text": "哈啊——（哈欠）"
+        },
+        {
+          "text": "呜啊——（哈欠）"
+        },
+        {
+          "text": "啊——嗯（哈欠）"
+        }
+      ],
+      "scenes": [
+        "雾津街头",
+        "test_room_a"
+      ]
+    }
+  ]
+}

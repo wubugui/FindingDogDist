@@ -1,0 +1,413 @@
+{
+  "id": "阎王岭山口",
+  "name": "阎王岭山口",
+  "worldWidth": 2000,
+  "camera": {
+    "zoom": 0.8,
+    "pixelsPerUnit": 1.0
+  },
+  "backgrounds": [
+    {
+      "image": "background.png",
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "bgm": "bgm_placeholder_low_tension",
+  "ambientSounds": [
+    "amb_night_forest_loop"
+  ],
+  "spawnPoint": {
+    "x": 348.84,
+    "y": 944.77
+  },
+  "spawnPoints": {
+    "entry": {
+      "x": 348.84,
+      "y": 944.77
+    }
+  },
+  "zones": [
+    {
+      "id": "z_同行闲扯",
+      "polygon": [
+        {
+          "x": 465.12,
+          "y": 697.67
+        },
+        {
+          "x": 1104.65,
+          "y": 552.33
+        },
+        {
+          "x": 1191.86,
+          "y": 755.81
+        },
+        {
+          "x": 552.33,
+          "y": 930.23
+        }
+      ],
+      "conditions": [
+        {
+          "narrative": "scenario_送货",
+          "state": "bundle_taken"
+        }
+      ],
+      "onEnter": [
+        {
+          "type": "emitNarrativeSignal",
+          "params": {
+            "sourceType": "zone",
+            "sourceId": "阎王岭山口:z_同行闲扯",
+            "signal": "songhuo_road_entered"
+          }
+        }
+      ]
+    },
+    {
+      "id": "z_X点一",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 552.33
+        },
+        {
+          "x": 2000.0,
+          "y": 552.33
+        },
+        {
+          "x": 2000.0,
+          "y": 668.6
+        },
+        {
+          "x": 0.0,
+          "y": 668.6
+        }
+      ],
+      "conditions": [
+        {
+          "narrative": "scenario_送货",
+          "state": "on_road"
+        }
+      ],
+      "onEnter": [
+        {
+          "type": "emitNarrativeSignal",
+          "params": {
+            "sourceType": "zone",
+            "sourceId": "阎王岭山口:z_X点一",
+            "signal": "hanming_x1_reached"
+          }
+        }
+      ]
+    },
+    {
+      "id": "z_越点二",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 414.24
+        },
+        {
+          "x": 2000.0,
+          "y": 414.24
+        },
+        {
+          "x": 2000.0,
+          "y": 486.92
+        },
+        {
+          "x": 0.0,
+          "y": 486.92
+        }
+      ],
+      "conditions": [
+        {
+          "narrative": "scenario_送货",
+          "state": "x1_called"
+        },
+        {
+          "narrative": "wrap_喊名_点二",
+          "state": "undecided"
+        }
+      ],
+      "onEnter": [
+        {
+          "type": "playScriptedDialogue",
+          "params": {
+            "lines": [
+              {
+                "speaker": "",
+                "text": "第二个画X的地方，他脚没停——走过去，就是答案。"
+              }
+            ]
+          }
+        },
+        {
+          "type": "emitNarrativeSignal",
+          "params": {
+            "sourceType": "zone",
+            "sourceId": "阎王岭山口:z_越点二",
+            "signal": "hanming_x2_skipped"
+          }
+        },
+        {
+          "type": "emitNarrativeSignal",
+          "params": {
+            "sourceType": "zone",
+            "sourceId": "阎王岭山口:z_越点二",
+            "signal": "hanming_x2_done"
+          }
+        }
+      ]
+    },
+    {
+      "id": "z_越点三",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 283.43
+        },
+        {
+          "x": 2000.0,
+          "y": 283.43
+        },
+        {
+          "x": 2000.0,
+          "y": 348.84
+        },
+        {
+          "x": 0.0,
+          "y": 348.84
+        }
+      ],
+      "conditions": [
+        {
+          "narrative": "scenario_送货",
+          "state": "x2_resolved"
+        },
+        {
+          "narrative": "wrap_喊名_点三",
+          "state": "undecided"
+        }
+      ],
+      "onEnter": [
+        {
+          "type": "playScriptedDialogue",
+          "params": {
+            "lines": [
+              {
+                "speaker": "",
+                "text": "第三个画X的地方，他看都没看——黑成那样的沟，谁爱喊谁喊。"
+              }
+            ]
+          }
+        },
+        {
+          "type": "emitNarrativeSignal",
+          "params": {
+            "sourceType": "zone",
+            "sourceId": "阎王岭山口:z_越点三",
+            "signal": "hanming_x3_skipped"
+          }
+        },
+        {
+          "type": "emitNarrativeSignal",
+          "params": {
+            "sourceType": "zone",
+            "sourceId": "阎王岭山口:z_越点三",
+            "signal": "hanming_x3_done"
+          }
+        }
+      ]
+    }
+  ],
+  "hotspots": [
+    {
+      "id": "hs_X点二_林边",
+      "type": "inspect",
+      "label": "林子边 · 画X的地方（二）",
+      "x": 1468.02,
+      "y": 515.99,
+      "interactionRange": 116.28,
+      "conditions": [
+        {
+          "narrative": "scenario_送货",
+          "state": "x1_called"
+        }
+      ],
+      "data": {
+        "graphId": "寻狗_喊名_点二"
+      }
+    },
+    {
+      "id": "hs_X点三_林边",
+      "type": "inspect",
+      "label": "林子边 · 画X的地方（三）",
+      "x": 1250.0,
+      "y": 366.28,
+      "interactionRange": 101.74,
+      "conditions": [
+        {
+          "narrative": "scenario_送货",
+          "state": "x2_resolved"
+        }
+      ],
+      "data": {
+        "graphId": "寻狗_喊名_点三"
+      }
+    },
+    {
+      "id": "hs_歇脚棚",
+      "type": "inspect",
+      "label": "歇脚棚 · 把包袱放下",
+      "x": 886.63,
+      "y": 247.09,
+      "interactionRange": 116.28,
+      "conditions": [
+        {
+          "narrative": "scenario_送货",
+          "state": "x3_resolved",
+          "reached": true
+        },
+        {
+          "not": {
+            "narrative": "scenario_送货",
+            "state": "delivered",
+            "reached": true
+          }
+        }
+      ],
+      "data": {
+        "graphId": "寻狗_送包袱到棚"
+      }
+    },
+    {
+      "id": "hs_进山的路",
+      "type": "inspect",
+      "label": "那条进山的路",
+      "x": 1642.44,
+      "y": 218.02,
+      "interactionRange": 130.81,
+      "conditions": [
+        {
+          "narrative": "scenario_送货",
+          "state": "delivered",
+          "reached": true
+        }
+      ],
+      "data": {
+        "graphId": "寻狗_看进山路"
+      }
+    },
+    {
+      "id": "T_下山回城",
+      "type": "transition",
+      "label": "掉头下山",
+      "x": 232.56,
+      "y": 1017.44,
+      "interactionRange": 93.02,
+      "data": {
+        "targetScene": "雾津街头",
+        "targetSpawnPoint": "from_event"
+      }
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc_脚帮甲",
+      "name": "挑担的脚夫",
+      "x": 610.47,
+      "y": 784.88,
+      "interactionRange": 93.02,
+      "animFile": "/resources/runtime/animation/npc_coolie_a_anim/anim.json",
+      "initialAnimState": "idle",
+      "initialFacing": "right",
+      "conditions": [
+        {
+          "narrative": "scenario_送货",
+          "state": "bundle_taken",
+          "reached": true
+        },
+        {
+          "not": {
+            "narrative": "scenario_送货",
+            "state": "delivered",
+            "reached": true
+          }
+        }
+      ],
+      "conditionHidesEntity": true
+    },
+    {
+      "id": "npc_脚帮乙",
+      "name": "背货的脚夫",
+      "x": 726.74,
+      "y": 843.02,
+      "interactionRange": 93.02,
+      "animFile": "/resources/runtime/animation/npc_coolie_b_anim/anim.json",
+      "initialAnimState": "idle",
+      "initialFacing": "right",
+      "conditions": [
+        {
+          "narrative": "scenario_送货",
+          "state": "bundle_taken",
+          "reached": true
+        },
+        {
+          "not": {
+            "narrative": "scenario_送货",
+            "state": "delivered",
+            "reached": true
+          }
+        }
+      ],
+      "conditionHidesEntity": true
+    }
+  ],
+  "depthConfig": {
+    "depth_map": "raw_depth_rg.png",
+    "collision_map": "collision.png",
+    "M": {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.7071067811865476,
+          -0.7071067811865475
+        ],
+        [
+          0.0,
+          0.7071067811865475,
+          0.7071067811865476
+        ]
+      ],
+      "ppu": 450.56,
+      "cx": 1024.0,
+      "cy": 571.5
+    },
+    "depth_mapping": {
+      "invert": false,
+      "scale": 2.5360660221099853,
+      "offset": -1.3626775575637817
+    },
+    "shader": {
+      "depth_per_sy": 0.002219460227272727
+    },
+    "collision": {
+      "x_min": -2.2727272510528564,
+      "z_min": -1.8540447550286556,
+      "cell_size": 0.028554692171003558,
+      "grid_width": 160,
+      "grid_height": 136,
+      "height_offset": 0.0
+    },
+    "depth_tolerance": 0.05,
+    "floor_offset": 0.0
+  }
+}

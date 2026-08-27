@@ -1,0 +1,370 @@
+{
+  "notifications": {
+    "ruleAcquired": "规矩本新增：{name}",
+    "fragmentAcquired": "获得规矩碎片",
+    "fragmentSynthesized": "碎片合成：{name}",
+    "archiveUpdated": "档案更新",
+    "archiveCharacter": "人物簿新增：{name}",
+    "archiveLore": "见闻录新增：{name}",
+    "archiveSlang": "怪话册记下一句：{name}",
+    "archiveRhyme": "歪歌册记下一首：{name}",
+    "archiveDocument": "杂书匣收进：{name}",
+    "archiveBook": "得了一本书：《{name}》",
+    "archiveBookEntry": "书页新解轶闻：{name}",
+    "inventoryFull": "包袱满了！",
+    "questAccepted": "新任务：{title}",
+    "questFocused": "当前任务：{title}",
+    "questCompleted": "任务完成：{title}",
+    "jobAccepted": "新活计：{title}",
+    "jobCompleted": "活计完成：{title}",
+    "jobDiscarded": "撂下了活计：{title}",
+    "currencyInsufficient": "铜钱不足!",
+    "shopPurchased": "购买了 {name}",
+    "mapTravelBlocked": "此刻脱不开身，无法看图赶路。",
+    "clueCollected": "已录线索：{title}",
+    "logTargetGone": "那件东西已经不在手上了。"
+  },
+  "menu": {
+    "gameTitle": "七日惊魂",
+    "gameSubtitle": "寻狗记 · 试玩",
+    "newGame": "新游戏",
+    "continueGame": "继续游戏",
+    "settings": "设置",
+    "returnToMain": "返回主菜单",
+    "saveSlot": "存档到槽位 {slot}",
+    "loadSlot": "读取槽位 {slot}",
+    "pause": "暂停",
+    "resume": "继续",
+    "save": "存档",
+    "load": "读档",
+    "back": "[返回]",
+    "slotEmpty": "槽位 {slot}: (空)",
+    "slotDay": "第{day}天",
+    "slotSub": "{date} · 游玩{minutes}分钟",
+    "unknownScene": "未知",
+    "bgm": "背景音乐",
+    "sfx": "音效",
+    "ambient": "环境音",
+    "voice": "对白",
+    "typewriter": "逐字显示",
+    "textSpeed": "文字速度",
+    "toggleOn": "开",
+    "toggleOff": "关",
+    "saveFailed": "存档失败",
+    "loadFailed": "读档失败，进度未改变"
+  },
+  "encounter": {
+    "panelTitle": "遭遇",
+    "unknownRule": "未知规矩",
+    "fragmentInsufficient": "碎片不足 {collected}/{total}",
+    "layerInsufficient": "规矩要义不足（需要：{layers}）",
+    "itemInsufficient": "道具不足",
+    "ruleTag": "[规矩]",
+    "specialTag": "[特殊]"
+  },
+  "bookshelf": {
+    "title": "书架",
+    "closeHint": "按 B 关闭",
+    "rules": "规矩本",
+    "characters": "人物簿",
+    "lore": "见闻录",
+    "documents": "杂书匣",
+    "slang": "怪话册",
+    "rhymes": "歪歌册",
+    "clues": "线索簿"
+  },
+  "characterBook": {
+    "title": "人物簿",
+    "back": "[返回书架]",
+    "empty": "(暂无人物记录)",
+    "impression": "印象:",
+    "knownIntel": "已知情报:"
+  },
+  "loreBook": {
+    "title": "见闻录",
+    "back": "[返回书架]",
+    "empty": "(暂无见闻)",
+    "source": "-- 来源:"
+  },
+  "slangBook": {
+    "title": "怪话册",
+    "back": "[返回书架]",
+    "empty": "(还没记下一句)",
+    "progress": "已记 {collected} / {total}",
+    "lockedSlot": "——还没听人说过",
+    "example": "他的用法：",
+    "source": "-- 来源：",
+    "note": "备注："
+  },
+  "rhymeBook": {
+    "title": "歪歌册",
+    "back": "[返回书架]",
+    "empty": "(还没记下一首)",
+    "progress": "已记 {collected} / {total}",
+    "lockedSlot": "——还没听人唱过",
+    "source": "-- 来源：",
+    "note": "备注："
+  },
+  "documentBox": {
+    "title": "杂书匣",
+    "back": "[返回书架]",
+    "empty": "(暂无文件)",
+    "note": "[注]"
+  },
+  "clueBook": {
+    "title": "线索簿",
+    "back": "[返回书架]",
+    "empty": "(还没记下什么。看书读告示时，标了记号的词点一下就能记来。)",
+    "progress": "已录 {count} 条"
+  },
+  "bookReader": {
+    "back": "[返回书架]",
+    "pageMissing": "此页缺失",
+    "pageHint": "左侧目录切换章节与轶闻",
+    "tocTitle": "目录",
+    "chapterFallback": "第 {n} 页",
+    "entryLocked": "此轶闻尚未解锁",
+    "backToChapter": "返回本章正文",
+    "untitledEntry": "（轶闻）",
+    "entryFromChapter": "出自：{chapter}",
+    "annotationHeading": "按语",
+    "prevChapter": "← 上一章",
+    "nextChapter": "下一章 →"
+  },
+  "hud": {
+    "coins": "铜钱:",
+    "ruleUseHint": "[G] 使用规矩",
+    "zoneInteractHint": "[E] 察看",
+    "current": "当前：",
+    "objective": "▸ {text}"
+  },
+  "inspectBox": {
+    "closeHint": "[ 点击或按任意键关闭 ]"
+  },
+  "cutscene": {
+    "skipConfirm": "再按一次 Esc 跳过"
+  },
+  "confirm": {
+    "ok": "确认",
+    "cancel": "取消",
+    "overwriteTitle": "覆盖存档",
+    "overwriteBody": "第 {slot} 槽已有存档，覆盖后原进度找不回来。",
+    "loadTitle": "读取存档",
+    "loadBody": "当前未保存的进度会丢失。",
+    "returnTitle": "返回主菜单",
+    "returnBody": "未保存的进度会丢失，确定回到标题？",
+    "discardTitle": "丢弃物件",
+    "discardBody": "「{name}」丢了就找不回来。",
+    "castTitle": "使用规矩",
+    "castBody": "要用「{name}」吗？",
+    "useTitle": "使用物件",
+    "useBody": "要把「{name}」{action}？"
+  },
+  "inventory": {
+    "title": "包袱",
+    "coins": "铜钱:",
+    "keyItem": "[关键]",
+    "noDesc": "(无描述)",
+    "discard": "丢弃",
+    "useDisabled": "眼下用不成。",
+    "closeHint": "按 I 关闭"
+  },
+  "map": {
+    "title": "[tag:string:place:wujin]城区图",
+    "closeHint": "按 M 关闭",
+    "noData": "(地图数据暂未配置)",
+    "locked": "???",
+    "legendTitle": "图例",
+    "legendCurrent": "当前所在",
+    "legendUnlocked": "可前往",
+    "legendLocked": "尚不可往",
+    "legendUnknown": "未知之地",
+    "legendQuest": "任务目标",
+    "legendRoute": "来往路线"
+  },
+  "pickup": {
+    "acquired": "获得了 {name} x{count}"
+  },
+  "quest": {
+    "title": "任务",
+    "mainline": "-- 主线 --",
+    "sideline": "-- 支线 ({count}) --",
+    "repeatable": "-- 零活 ({count}) --",
+    "completed": "-- 已完成 ({count}) --",
+    "done": "[已了]",
+    "emptyTitle": "这一页还空着",
+    "emptyHint": "去街面上多走动、找人搭话，接下的活计都会记在这里",
+    "closeHint": "按 Tab 关闭",
+    "runOrdinal": "第{n}单",
+    "runTracked": " ▶ 追踪中",
+    "runSuspended": " ‖ 搁置",
+    "runCurrent": "当前：{state}",
+    "runArchive": "{label} ×{count}",
+    "inProgress": "-- 进行中 ({count}) --",
+    "currentMark": "当前",
+    "isCurrent": "▶ 当前任务",
+    "setCurrent": "设为当前任务",
+    "objectives": "目标",
+    "bannerNewQuest": "新任务",
+    "bannerNewJob": "新活计",
+    "bannerFocus": "当前任务"
+  },
+  "rulesPanel": {
+    "title": "规矩本",
+    "mastered": "== 已掌握 ==",
+    "collecting": "== 搜集中 ==",
+    "layerXiang": "象",
+    "layerLi": "理",
+    "layerShu": "术",
+    "source": "来源:",
+    "fragments": "碎片:",
+    "emptyTitle": "规矩本还空着",
+    "emptyHint": "多听人讲话、留意各处的告示，听来的规矩会记在这里",
+    "closeHint": "按 R 关闭",
+    "backToShelf": "[返回书架]",
+    "unknown": "未知规矩",
+    "hidden": "???"
+  },
+  "ruleUse": {
+    "title": "使用规矩",
+    "closeHint": "按 Esc 关闭",
+    "unknown": "未知规矩",
+    "noneUsable": "还没学到这里用得上的规矩"
+  },
+  "shop": {
+    "coins": "铜钱:",
+    "unit": "文",
+    "buy": "[购买]",
+    "insufficient": "[不足]",
+    "leave": "[离开]"
+  },
+  "dialogueLog": {
+    "title": "日志",
+    "empty": "(还没记下什么)",
+    "emptyEvents": "(这阵子没出什么事)",
+    "closeHint": "按 L 关闭",
+    "total": "共 {count} 条",
+    "filterAll": "全部",
+    "filterEvents": "只看事件",
+    "sessionHeader": "与 {name}",
+    "stampDay": "第{day}日",
+    "stampDayPhase": "第{day}日 · {phase}"
+  },
+  "dialogue": {
+    "ruleTag": "[规]",
+    "defaultProtagonistName": "关二狗",
+    "narratorLabel": "旁白",
+    "choiceNeedRule": "规矩本里尚未收录「{name}」，无法使用该说法。",
+    "choiceFlagLocked": "条件未满足，无法选择该选项。",
+    "choiceNeedCoins": "铜钱不足，至少需要 {amount} 文。"
+  },
+  "actions": {
+    "clickToContinue": "点击继续"
+  },
+  "gameTags": {
+    "flagTrue": "是",
+    "flagFalse": "否",
+    "flagUnset": "—",
+    "unknownItem": "（道具：{id}）"
+  },
+  "place": {
+    "wujin": "雾津县",
+    "wujin_long": "雾津，地处西南山区盆地。时值军阀割据，外面没个太平日子，城里也好不到哪里去。"
+  },
+  "角色": {
+    "埃德加": "埃德加",
+    "克拉拉": "克拉拉",
+    "关二狗": "关二狗",
+    "关二狗的同伙A": "癞子"
+  },
+  "waterMinigame": {
+    "exit": "退出",
+    "exitEscHint": "Esc 也可退出",
+    "devPullOk": "沉沉一提——绳子那头真有分量（Dev）。",
+    "dockCrateSuccess": "箱子角浮出水面，铜钱叮当——暂且算是捞出点名堂。",
+    "dockCrateFail": "绳子发涩，箱子往深处滑走了……再找机会。",
+    "dockMonkeyBite": "脚踝猛地一紧：水面下的东西拽了你一把！",
+    "dockRipple": "波纹晃得人眼花——底下太深。",
+    "grassDefault": "[水草] 指尖掠过一根飘摇的水草……",
+    "nothingToGrab": "……没有什么能抓的。",
+    "pickPrefix": "[捞起] {cue}",
+    "pullSuccessPrefix": "[成功] {cue}",
+    "pullEscape": "[挣脱] 它一摆尾不见了。",
+    "pullSnap": "[线断] 绳结一紧，断了。",
+    "pullBite": "[咬伤] 水里有什么狠咬了一口！",
+    "pullStatus": "[水边拉扯] 剩余 {sec}s  {state}",
+    "pullStateForeshadow": "（前摇）",
+    "pullStateYank": "（猛拽）",
+    "pullStateInZone": "（在区内）",
+    "pullStateHold": "（按住鼠标或空格）",
+    "pullStateRelease": "（松开一下）"
+  },
+  "npc名字": {
+    "卖糖画的商贩的名字": "许糖匠"
+  },
+  "价格": {
+    "抽糖画价格": 5
+  },
+  "pressureHold": {
+    "holdHint": "按住 [空格] 或按住鼠标",
+    "holdHintTouch": "按住屏幕不放"
+  },
+  "actionChoice": {
+    "cancelHint": "Esc 取消"
+  },
+  "touchControls": {
+    "quest": "任务",
+    "inventory": "背包",
+    "rules": "规矩",
+    "dialogueLog": "日志",
+    "bookshelf": "书架",
+    "map": "地图",
+    "ruleUse": "规则牌",
+    "shop": "商店",
+    "menu": "菜单",
+    "debug": "调试",
+    "up": "上",
+    "down": "下",
+    "left": "左",
+    "right": "右",
+    "run": "跑",
+    "interact": "互动",
+    "back": "返回",
+    "crouch": "蹲",
+    "gaze": "看",
+    "kick": "上脚",
+    "jump": "跳"
+  },
+  "paperCraft": {
+    "orderDescDefault": "按活计单子选纸、搭骨、糊面。部件可换，但分数和忌讳不一样。",
+    "targetHintDefault": "摆好部件、定纸色与收尾，再交活。",
+    "paletteTitle": "纸扎部件",
+    "paperTitle": "纸色",
+    "finishTitleDefault": "收口",
+    "slotOptionalSuffix": "（可空）",
+    "slotRejects": "{slot} 放不上 {part}",
+    "missingParts": "还缺：{parts}",
+    "progressPrefix": "〔第 {i}/{n} 件〕 ",
+    "submit": "交活",
+    "exit": "退出"
+  },
+  "sugarWheel": {
+    "hint": "拖动指针选起点 · 按住蓄力钮蓄力 · Esc 关闭",
+    "chargeGlyph": "蓄",
+    "confirmClose": "确定要关闭转盘吗？",
+    "confirmYes": "关闭",
+    "confirmNo": "取消",
+    "resultBanner": "抽中了：{label}"
+  },
+  "objectExamine": {
+    "hint": "凑近些……再近些。有什么不对劲，便会自己露出来。",
+    "observe": "仔细看看",
+    "exit": "放下",
+    "allFound": "这上面能看出的蹊跷，似乎都翻过了。",
+    "continue": "……看够了，退开一步。",
+    "bag": "摸摸囊",
+    "holding": "手里捏着：{item}",
+    "noUse": "使不上……",
+    "shadeTitle": "隐约觉着不对"
+  }
+}

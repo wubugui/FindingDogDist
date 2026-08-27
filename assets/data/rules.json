@@ -1,0 +1,158 @@
+{
+  "categories": {
+    "ward": "避祸",
+    "taboo": "禁忌",
+    "jargon": "行话",
+    "streetwise": "江湖"
+  },
+  "verifiedLabels": {
+    "unverified": "未验证",
+    "effective": "有效",
+    "questionable": "存疑"
+  },
+  "rules": [
+    {
+      "id": "rule_no_go_night",
+      "name": "城隍庙后山三更勿去",
+      "category": "taboo",
+      "layers": {
+        "xiang": {
+          "text": "王大爷说的，城隍庙后山半夜三更有白影子飘来飘去的，还会唱戏。老辈人都说那地方不干净，三更天莫往那点跑。",
+          "verified": "unverified"
+        }
+      }
+    },
+    {
+      "id": "rule_zombie_fire",
+      "name": "白毛僵尸怕火",
+      "incompleteName": "某种关于僵尸的传闻",
+      "category": "ward",
+      "layers": {
+        "xiang": {
+          "text": "据说白毛僵尸最怕火，见了明火就不敢靠近。桃木点燃效果更佳，寻常松脂火把也管用。",
+          "verified": "unverified"
+        }
+      }
+    },
+    {
+      "id": "rule_ghost_verified",
+      "name": "后山确有古怪",
+      "category": "taboo",
+      "layers": {
+        "xiang": {
+          "text": "亲身经历过了，城隍庙后山确实不太平。那唱戏的白影子……不像是活人。",
+          "verified": "effective"
+        }
+      }
+    },
+    {
+      "id": "rule_ghost_origin",
+      "name": "唱戏白影的来历",
+      "incompleteName": "某个关于白影子的传闻",
+      "category": "streetwise",
+      "layers": {
+        "xiang": {
+          "text": "据各方传闻拼凑，城隍庙后山的唱戏白影子，很可能是早年间[tag:string:place:wujin]柳家戏班子的人。她不是在害人，而是在找人。",
+          "verified": "unverified"
+        }
+      }
+    },
+    {
+      "id": "rule_no_answer_name",
+      "name": "山里喊名，千万别应",
+      "incompleteName": "进山的某条老忌讳",
+      "category": "taboo",
+      "layers": {
+        "xiang": {
+          "text": "背尸的老手都听过：山里要是有人一声一声喊你名字，千万别应。那声音慢悠悠的，像个熟人——可前不着村后不着店的山路上，哪来的熟人。",
+          "verified": "unverified"
+        },
+        "li": {
+          "text": "亲身撞上了一回。那是山里的杂气学人声，应一声，魂就被勾了去，像马屠户那样在林子里转到死。它跟了一截，像凑近打量他、认不准他是个什么，散了。为什么认不准——他没敢细想。",
+          "verified": "effective"
+        }
+      }
+    },
+    {
+      "id": "rule_no_touch_offering",
+      "name": "路祭不能动",
+      "incompleteName": "一条路边的忌讳",
+      "category": "taboo",
+      "layers": {
+        "xiang": {
+          "text": "路边摆着的酒肉、纸钱是给野鬼吃的供——路过见了别动，那是人家的。动了就欠了它一口，它就有理由跟上你。",
+          "verified": "unverified"
+        },
+        "li": {
+          "text": "亲身犯了这条：山口那摊路祭，饿急了端来吃了，还冲着林子骂了两句——那东西立刻缠上脚踝往里拖。后来有个道士点明：又吃供又骂人，回半个字，魂就归它管了。",
+          "verified": "effective"
+        }
+      }
+    },
+    {
+      "id": "rule_zhenshi_sizhang",
+      "name": "镇尸四样",
+      "incompleteName": "背尸行里的土办法",
+      "category": "ward",
+      "layers": {
+        "xiang": {
+          "text": "背尸行传下来的土办法，专对不安分的尸：糙米连豆子绕尸撒一圈；墨斗线在中间绷一道；七颗枣核（没有就用石子）按进尸背；剪子横在中间。哪样管用没人说得清——没人敢试第二回。",
+          "verified": "unverified"
+        },
+        "shu": {
+          "text": "义庄里真用过一回：四样下去，两具扭在一起的尸真就松了手，直挺挺躺平。……虽说到现在也不知道，到底是哪一样起的作用，还是——另有什么替他把场面圆上了。",
+          "verified": "questionable"
+        }
+      }
+    },
+    {
+      "id": "rule_drowned_corpse",
+      "name": "淹死的，水汽重",
+      "incompleteName": "关于淹死人的门道",
+      "category": "jargon",
+      "layers": {
+        "xiang": {
+          "text": "义庄管事顺嘴点的：淹死的泡过水，水汽阴沉，上了肩就往水那头坠。背着走道莫沿水边——水汽勾水汽，越走越沉。",
+          "verified": "effective"
+        }
+      }
+    }
+  ],
+  "fragments": [
+    {
+      "id": "frag_zombie_fire_01",
+      "text": "听一个老道说过，僵尸这东西，年份越久越厉害，白毛的最怕火……",
+      "ruleId": "rule_zombie_fire",
+      "layer": "xiang",
+      "source": "老道士"
+    },
+    {
+      "id": "frag_zombie_fire_02",
+      "text": "赶尸匠的手札上写着：遇白毛，速点桃木，火光所及，其不敢进。",
+      "ruleId": "rule_zombie_fire",
+      "layer": "xiang",
+      "source": "赶尸匠手札"
+    },
+    {
+      "id": "frag_ghost_origin_01",
+      "text": "说书人说：有人在后山看到白影子唱戏，回来就疯了，嘟囔着'好一似食尽鸟投林'。那是《红楼》里的曲词。",
+      "ruleId": "rule_ghost_origin",
+      "layer": "xiang",
+      "source": "说书人张叨叨"
+    },
+    {
+      "id": "frag_ghost_origin_02",
+      "text": "据说早年间[tag:string:place:wujin]有个柳家戏班子，后来不知怎么就散了。有人说唱戏的白影子就是戏班里的人。",
+      "ruleId": "rule_ghost_origin",
+      "layer": "xiang",
+      "source": "说书人张叨叨"
+    },
+    {
+      "id": "frag_ghost_origin_03",
+      "text": "茶馆小二说，有个书生见了白影后说了句话：她不是在害人，她是在找人。",
+      "ruleId": "rule_ghost_origin",
+      "layer": "xiang",
+      "source": "茶馆小二"
+    }
+  ]
+}

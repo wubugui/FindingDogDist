@@ -1,0 +1,126 @@
+{
+  "id": "temple_exterior",
+  "name": "庙宇",
+  "worldWidth": 2576.0,
+  "camera": {
+    "zoom": 1.0,
+    "pixelsPerUnit": 1.0
+  },
+  "backgrounds": [
+    {
+      "image": "background.png",
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "spawnPoint": {
+    "x": 658.7,
+    "y": 672.9
+  },
+  "spawnPoints": {
+    "from_mountain_pass": {
+      "x": 148.7,
+      "y": 178.9
+    },
+    "spawn_0": {
+      "x": 790.3,
+      "y": 421.94
+    }
+  },
+  "hotspots": [
+    {
+      "id": "exit_to_mountain_pass",
+      "type": "transition",
+      "label": "回山路",
+      "x": 148.7,
+      "y": 178.9,
+      "interactionRange": 27.0,
+      "data": {
+        "targetScene": "mountain_pass",
+        "targetSpawnPoint": "from_temple_exterior"
+      }
+    },
+    {
+      "id": "T到庙宇室内",
+      "type": "transition",
+      "label": "到城隍庙",
+      "x": 786.1,
+      "y": 443.9,
+      "interactionRange": 30.0,
+      "data": {
+        "targetScene": "temple",
+        "targetSpawnPoint": "from_street"
+      }
+    },
+    {
+      "id": "庙宇-纸人",
+      "type": "inspect",
+      "label": "",
+      "x": 619.3,
+      "y": 706.4,
+      "interactionRange": 20.0,
+      "data": {
+        "text": "歪七扭八的纸人......"
+      }
+    },
+    {
+      "id": "庙宇-洋人棺材",
+      "type": "inspect",
+      "label": "",
+      "x": 1199.8,
+      "y": 408.7,
+      "interactionRange": 50.0,
+      "data": {
+        "text": "洋人的棺材"
+      }
+    }
+  ],
+  "depthConfig": {
+    "depth_map": "raw_depth_rg.png",
+    "collision_map": "collision.png",
+    "M": {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.7071067811865476,
+          -0.7071067811865475
+        ],
+        [
+          0.0,
+          0.7071067811865475,
+          0.7071067811865476
+        ]
+      ],
+      "ppu": 367.84,
+      "cx": 836.0,
+      "cy": 470.5
+    },
+    "depth_mapping": {
+      "invert": false,
+      "scale": 2.5987107421875,
+      "offset": -1.3608839345932007
+    },
+    "shader": {
+      "depth_per_sy": 0.002718573292735972
+    },
+    "collision": {
+      "x_min": -2.2727272510528564,
+      "z_min": -1.85777078931811,
+      "cell_size": 0.02861251464133875,
+      "grid_width": 160,
+      "grid_height": 130,
+      "height_offset": 0.05
+    },
+    "depth_tolerance": 0.0,
+    "floor_offset": 0.0
+  },
+  "ambientSounds": [
+    "阴风"
+  ],
+  "worldHeight": 1437.77
+}

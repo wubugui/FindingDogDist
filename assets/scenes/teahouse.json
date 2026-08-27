@@ -1,0 +1,520 @@
+{
+  "id": "teahouse",
+  "name": "茶馆",
+  "worldWidth": 700.0,
+  "camera": {
+    "zoom": 1.5,
+    "pixelsPerUnit": 1.0
+  },
+  "playerWalkSpeed": 80.0,
+  "playerRunSpeed": 180.0,
+  "backgrounds": [
+    {
+      "image": "background.png",
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "filterId": "teahouse_evening",
+  "lightEnv": {
+    "key": {
+      "azimuthDeg": 310.0,
+      "elevationDeg": 30.0,
+      "color": [
+        0.95,
+        0.78,
+        0.55
+      ],
+      "intensity": 0.65
+    },
+    "ambient": {
+      "color": [
+        0.32,
+        0.29,
+        0.33
+      ],
+      "intensity": 0.75
+    },
+    "shadow": {
+      "enabled": true,
+      "mode": "planar",
+      "darkness": 0.3,
+      "softness": 1.2,
+      "contact": 0.4,
+      "contactSize": 0.12,
+      "softSamples": 1,
+      "softRadius": 0.05,
+      "billboard": "light"
+    },
+    "toneStrength": 0.5,
+    "toneEnabled": true,
+    "ao": {
+      "contact": 0.45,
+      "form": 0.3
+    }
+  },
+  "spawnPoint": {
+    "x": 141.9,
+    "y": 225.82
+  },
+  "spawnPoints": {
+    "from_street": {
+      "x": 151.9,
+      "y": 171.4
+    }
+  },
+  "hotspots": [
+    {
+      "id": "teahouse_notice",
+      "type": "inspect",
+      "x": 54.9,
+      "y": 192.8,
+      "interactionRange": 64.3,
+      "label": "告示板",
+      "data": {
+        "text": "告示板上贴着几张旧启事，大多是招工、寻人和催债。最上头一张红纸写得扎眼：\"近日夜里少往城隍庙方向去，若闻怪声，切勿停步。\"",
+        "actions": [
+          {
+            "type": "collectClue",
+            "params": {
+              "clueId": "houshan_sangeng"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "teahouse_table_items",
+      "type": "inspect",
+      "x": 428.6,
+      "y": 431.6,
+      "interactionRange": 57.1,
+      "label": "桌上的茶碗",
+      "data": {
+        "text": "几个粗瓷茶碗摆得东倒西歪，花生壳和瓜子皮堆在一处。屋里人多，偏偏让人觉得越热闹越藏得住闲话。"
+      }
+    },
+    {
+      "id": "teahouse_door_too_early",
+      "type": "inspect",
+      "x": 164.7,
+      "y": 170.8,
+      "interactionRange": 20.0,
+      "conditions": [
+        {
+          "not": {
+            "narrative": "flow_xungou_main",
+            "state": "state_2",
+            "reached": true
+          }
+        }
+      ],
+      "label": "门口",
+      "data": {
+        "text": "门板虚掩，街上的雾气顺着门缝往里钻。身后醒木一响，满堂茶客都伸长了脖子——书正说到要紧处，这时候哪个舍得起身走人。"
+      }
+    },
+    {
+      "id": "exit_to_street",
+      "type": "transition",
+      "x": 145.6,
+      "y": 182.2,
+      "interactionRange": 20.0,
+      "conditions": [
+        {
+          "narrative": "flow_xungou_main",
+          "state": "state_2",
+          "reached": true
+        }
+      ],
+      "label": "出门",
+      "data": {
+        "targetScene": "雾津街头",
+        "targetSpawnPoint": "from_teahouse"
+      }
+    },
+    {
+      "id": "hs_茶客吹牛",
+      "type": "inspect",
+      "label": "凑到茶客堆里",
+      "x": 350.0,
+      "y": 300.0,
+      "interactionRange": 64.0,
+      "conditions": [
+        {
+          "narrative": "flow_xungou_main",
+          "state": "s02b_meng"
+        }
+      ],
+      "conditionHidesEntity": true,
+      "data": {
+        "graphId": "寻狗_茶馆吹牛"
+      }
+    },
+    {
+      "id": "hs_向导传闻",
+      "type": "inspect",
+      "label": "新贴的告示 · 重金寻向导",
+      "x": 348.3,
+      "y": 429.7,
+      "interactionRange": 64.0,
+      "conditions": [
+        {
+          "narrative": "flow_xungou_main",
+          "state": "s06_laoxiang"
+        },
+        {
+          "narrative": "scenario_向导",
+          "state": "not_started"
+        }
+      ],
+      "conditionHidesEntity": true,
+      "data": {
+        "graphId": "寻狗_向导传闻"
+      }
+    }
+  ],
+  "npcs": [
+    {
+      "id": "storyteller_zhang",
+      "name": "说书人张叨叨",
+      "x": 363.9,
+      "y": 490.7,
+      "dialogueGraphId": "寻狗_说书人",
+      "interactionRange": 40.0,
+      "animFile": "/resources/runtime/animation/npc_storyteller_anim/anim.json",
+      "initialAnimState": "idle",
+      "scale": 0.9,
+      "initialFacing": "left",
+      "initialAnimPlayback": {
+        "holdFrame": 0
+      },
+      "portraitSlug": "npc_storyteller_anim"
+    },
+    {
+      "id": "blind_li",
+      "name": "瞎子李",
+      "x": 154.8,
+      "y": 307.2,
+      "dialogueGraphId": "茶馆瞎子李",
+      "interactionRange": 71.4,
+      "animFile": "/resources/runtime/animation/npc_blind_li_anim/anim.json",
+      "initialAnimState": "crouch",
+      "initialAnimPlayback": {
+        "holdFrame": 5
+      },
+      "initialFacing": "left"
+    },
+    {
+      "id": "npc_掌柜",
+      "name": "茶馆掌柜",
+      "x": 192.8,
+      "y": 230.9,
+      "interactionRange": 64.0,
+      "animFile": "/resources/runtime/animation/npc_teahouse_owner_anim/anim.json",
+      "initialAnimState": "idle",
+      "dialogueGraphId": "寻狗_茶馆掌柜"
+    },
+    {
+      "id": "waiter_xiaoer",
+      "name": "小二",
+      "x": 81.1,
+      "y": 256.8,
+      "dialogueGraphId": "茶馆小二",
+      "interactionRange": 64.3,
+      "animFile": "/resources/runtime/animation/npc_lifu_anim/anim.json",
+      "initialAnimState": "crouch",
+      "initialAnimPlayback": {
+        "holdFrame": 9
+      }
+    },
+    {
+      "id": "fx_steam_1",
+      "name": "热气",
+      "x": 179.6,
+      "y": 371.8,
+      "interactionRange": 0,
+      "castShadow": false,
+      "animFile": "/resources/runtime/animation/fx_teapot_steam/anim.json",
+      "initialAnimState": "idle"
+    },
+    {
+      "id": "fx_steam_2",
+      "name": "热气",
+      "x": 344.1,
+      "y": 315.1,
+      "interactionRange": 0,
+      "castShadow": false,
+      "animFile": "/resources/runtime/animation/fx_teapot_steam/anim.json",
+      "initialAnimState": "idle",
+      "initialAnimPlayback": {
+        "speed": 0.8,
+        "reverse": true,
+        "startFrame": 8
+      },
+      "scale": 0.65,
+      "initialFacing": "left"
+    },
+    {
+      "id": "fx_steam_2_copy_2",
+      "name": "热气",
+      "x": 328.8,
+      "y": 305.9,
+      "interactionRange": 0,
+      "castShadow": false,
+      "animFile": "/resources/runtime/animation/fx_teapot_steam/anim.json",
+      "initialAnimState": "idle",
+      "scale": 0.5,
+      "initialAnimPlayback": {
+        "speed": 0.5,
+        "startFrame": 1
+      }
+    },
+    {
+      "id": "fx_steam_2_copy_2_copy",
+      "name": "热气",
+      "x": 461.9,
+      "y": 220.2,
+      "interactionRange": 0,
+      "castShadow": false,
+      "animFile": "/resources/runtime/animation/fx_teapot_steam/anim.json",
+      "initialAnimState": "idle",
+      "scale": 0.5,
+      "initialAnimPlayback": {
+        "speed": 0.6,
+        "startFrame": 7
+      }
+    },
+    {
+      "id": "fx_steam_2_copy",
+      "name": "热气",
+      "x": 557.6,
+      "y": 281.8,
+      "interactionRange": 0,
+      "castShadow": false,
+      "animFile": "/resources/runtime/animation/fx_teapot_steam/anim.json",
+      "initialAnimState": "idle",
+      "initialAnimPlayback": {
+        "reverse": true
+      },
+      "scale": 0.5
+    },
+    {
+      "id": "fx_steam_2_copy_copy",
+      "name": "热气",
+      "x": 568.2,
+      "y": 263.7,
+      "interactionRange": 0,
+      "castShadow": false,
+      "animFile": "/resources/runtime/animation/fx_teapot_steam/anim.json",
+      "initialAnimState": "idle",
+      "scale": 0.5,
+      "initialAnimPlayback": {
+        "speed": 0.3,
+        "startFrame": 4
+      }
+    },
+    {
+      "id": "fx_steam_3",
+      "name": "热气",
+      "x": 527.8,
+      "y": 358.2,
+      "interactionRange": 0,
+      "castShadow": false,
+      "animFile": "/resources/runtime/animation/fx_teapot_steam/anim.json",
+      "initialAnimState": "idle"
+    },
+    {
+      "id": "fx_glow_1",
+      "name": "灯",
+      "x": 333.9,
+      "y": 66.2,
+      "interactionRange": 0,
+      "castShadow": false,
+      "animFile": "/resources/runtime/animation/fx_lantern_glow/anim.json",
+      "initialAnimState": "idle"
+    },
+    {
+      "id": "fx_glow_2",
+      "name": "灯",
+      "x": 143.5,
+      "y": 133.6,
+      "interactionRange": 0,
+      "castShadow": false,
+      "animFile": "/resources/runtime/animation/fx_lantern_glow/anim.json",
+      "initialAnimState": "idle"
+    },
+    {
+      "id": "fx_patron_laugh",
+      "name": "笑客",
+      "x": 147.5,
+      "y": 369.8,
+      "interactionRange": 0,
+      "castShadow": false,
+      "renderRaw": true,
+      "animFile": "/resources/runtime/animation/fx_patron_laugh/anim.json",
+      "initialAnimState": "idle",
+      "initialAnimPlayback": {
+        "reverse": true,
+        "startFrame": 4
+      }
+    },
+    {
+      "id": "fx_patron_chatA",
+      "name": "茶客甲",
+      "x": 496.8,
+      "y": 332.6,
+      "interactionRange": 0,
+      "castShadow": false,
+      "renderRaw": true,
+      "animFile": "/resources/runtime/animation/fx_patron_chatA/anim.json",
+      "initialAnimState": "idle",
+      "initialAnimPlayback": {
+        "reverse": true,
+        "startFrame": 1
+      }
+    },
+    {
+      "id": "fx_patron_sage",
+      "name": "老者甲",
+      "x": 298.4,
+      "y": 329.5,
+      "interactionRange": 0,
+      "castShadow": false,
+      "renderRaw": true,
+      "animFile": "/resources/runtime/animation/fx_patron_sage/anim.json",
+      "initialAnimState": "idle",
+      "initialAnimPlayback": {
+        "speed": 0.7,
+        "startFrame": 5
+      }
+    },
+    {
+      "id": "fx_patron_drinker",
+      "name": "喝茶客",
+      "x": 236.4,
+      "y": 371.5,
+      "interactionRange": 0,
+      "castShadow": false,
+      "renderRaw": true,
+      "animFile": "/resources/runtime/animation/fx_patron_drinker/anim.json",
+      "initialAnimState": "idle",
+      "initialAnimPlayback": {
+        "speed": 0.7,
+        "startFrame": 2
+      }
+    },
+    {
+      "id": "fx_patron_eater",
+      "name": "邻桌客",
+      "x": 598.7,
+      "y": 360.6,
+      "interactionRange": 0,
+      "castShadow": false,
+      "renderRaw": true,
+      "animFile": "/resources/runtime/animation/fx_patron_eater/anim.json",
+      "initialAnimState": "idle"
+    },
+    {
+      "id": "new_npc_1",
+      "name": "茶馆狗",
+      "x": 333.6,
+      "y": 199.9,
+      "interactionRange": 50,
+      "animFile": "/resources/runtime/animation/dog_anim/anim.json",
+      "initialAnimState": "idle",
+      "scale": 0.75,
+      "initialFacing": "left"
+    },
+    {
+      "id": "new_hotspot_0",
+      "name": "老衙役",
+      "x": 267.1,
+      "y": 175.1,
+      "animFile": "/resources/runtime/animation/npc_yamen_gatekeeper_anim/anim.json",
+      "interactionRange": 0,
+      "perspectiveScaleEnabled": true
+    }
+  ],
+  "depthConfig": {
+    "depth_map": "raw_depth_rg.png",
+    "collision_map": "collision.png",
+    "M": {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.7071067811865476,
+          -0.7071067811865475
+        ],
+        [
+          0.0,
+          0.7071067811865475,
+          0.7071067811865476
+        ]
+      ],
+      "ppu": 450.56,
+      "cx": 1024.0,
+      "cy": 768.0
+    },
+    "depth_mapping": {
+      "invert": false,
+      "scale": 4.189799037170411,
+      "offset": -2.7627836299896242
+    },
+    "shader": {
+      "depth_per_sy": 0.002219460227272727
+    },
+    "collision": {
+      "x_min": -2.2727272510528564,
+      "z_min": -2.437647108737184,
+      "cell_size": 0.030666353932819426,
+      "grid_width": 149,
+      "grid_height": 160,
+      "height_offset": 0.05
+    },
+    "depth_tolerance": 0.0,
+    "floor_offset": 0.0
+  },
+  "worldHeight": 525.0,
+  "perspectiveScale": {
+    "near": {
+      "x": 350.0,
+      "y": 525.0,
+      "scale": 1.5
+    },
+    "far": {
+      "x": 350.0,
+      "y": 210.0,
+      "scale": 1.0
+    }
+  },
+  "onEnter": [
+    {
+      "type": "startDialogueGraph",
+      "params": {
+        "graphId": "寻狗_听书开场"
+      }
+    }
+  ],
+  "characterGrade": {
+    "slope": [
+      0.574,
+      0.497,
+      0.436
+    ],
+    "offset": [
+      -0.016,
+      0.024,
+      0.042
+    ],
+    "saturation": 1.0
+  },
+  "ambientSounds": [
+    "中文人声闹市"
+  ]
+}

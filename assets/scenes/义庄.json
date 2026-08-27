@@ -1,0 +1,485 @@
+{
+  "id": "义庄",
+  "name": "义庄",
+  "worldWidth": 1000.0,
+  "worldHeight": 558.11,
+  "camera": {
+    "zoom": 1.25,
+    "pixelsPerUnit": 1.0
+  },
+  "backgrounds": [
+    {
+      "image": "background.png",
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "ambientSounds": [
+    "amb_yizhuang_room_tone"
+  ],
+  "spawnPoint": {
+    "x": 559.9,
+    "y": 351.2
+  },
+  "spawnPoints": {
+    "entry": {
+      "x": 427.5,
+      "y": 520.0
+    }
+  },
+  "zones": [
+    {
+      "id": "z_义庄进门",
+      "polygon": [
+        {
+          "x": 228.4,
+          "y": 321.7
+        },
+        {
+          "x": 316.5,
+          "y": 360.5
+        },
+        {
+          "x": 383.5,
+          "y": 409.6
+        },
+        {
+          "x": 357.7,
+          "y": 538.6
+        },
+        {
+          "x": 134.3,
+          "y": 460.5
+        }
+      ],
+      "conditions": [
+        {
+          "narrative": "scenario_义庄镇尸",
+          "state": "not_entered"
+        },
+        {
+          "narrative": "flow_xungou_main",
+          "state": "s09_songhuo",
+          "reached": true
+        }
+      ],
+      "onEnter": [
+        {
+          "type": "emitNarrativeSignal",
+          "params": {
+            "signal": "yizhuang_intro_entered",
+            "sourceType": "zone",
+            "sourceId": "义庄:z_义庄进门"
+          }
+        }
+      ],
+      "planes": [
+        "normal"
+      ]
+    },
+    {
+      "id": "z_义庄_香火",
+      "polygon": [
+        {
+          "x": 0.0,
+          "y": 0.0
+        },
+        {
+          "x": 1000.0,
+          "y": 0.0
+        },
+        {
+          "x": 1000.0,
+          "y": 760.0
+        },
+        {
+          "x": 0.0,
+          "y": 760.0
+        }
+      ],
+      "smell": {
+        "scent": "incense",
+        "intensity": 38
+      }
+    },
+    {
+      "id": "z_背尸_进门指路",
+      "planes": [
+        "背尸"
+      ],
+      "polygon": [
+        {
+          "x": 330.0,
+          "y": 440.0
+        },
+        {
+          "x": 540.0,
+          "y": 440.0
+        },
+        {
+          "x": 540.0,
+          "y": 557.0
+        },
+        {
+          "x": 330.0,
+          "y": 557.0
+        }
+      ],
+      "conditions": [
+        {
+          "plane": "背尸"
+        }
+      ],
+      "onEnter": [
+        {
+          "type": "showSpeechBubble",
+          "params": {
+            "target": "npc_管事",
+            "text": "轻些放！那边空凳——脚朝门，头朝里！",
+            "duration": 2.8
+          }
+        }
+      ]
+    }
+  ],
+  "hotspots": [
+    {
+      "id": "hs_两尸",
+      "type": "inspect",
+      "label": "扭在地上的两具尸",
+      "x": 751.7,
+      "y": 410.8,
+      "interactionRange": 90.0,
+      "displayImage": {
+        "image": "/resources/runtime/images/corpses/demo/two_corpses_grappling.png",
+        "worldWidth": 159.0,
+        "worldHeight": 105.5,
+        "spriteSort": "back"
+      },
+      "collisionPolygon": [
+        {
+          "x": -149.0,
+          "y": -4.2
+        },
+        {
+          "x": -6.9,
+          "y": -123.3
+        },
+        {
+          "x": 94.8,
+          "y": -90.4
+        },
+        {
+          "x": -64.8,
+          "y": 41.3
+        }
+      ],
+      "collisionPolygonLocal": true,
+      "data": {
+        "graphId": "寻狗_看两尸"
+      },
+      "conditions": [
+        {
+          "narrative": "flow_xungou_main",
+          "state": "s09_songhuo",
+          "reached": true
+        }
+      ],
+      "conditionHidesEntity": true,
+      "planes": [
+        "normal"
+      ]
+    },
+    {
+      "id": "hs_镇尸_撒米",
+      "type": "inspect",
+      "label": "抓糙米连豆子，绕两尸撒一圈",
+      "x": 520.0,
+      "y": 480.0,
+      "interactionRange": 70.0,
+      "conditions": [
+        {
+          "narrative": "scenario_义庄镇尸",
+          "state": "entered",
+          "reached": true
+        },
+        {
+          "narrative": "wrap_镇尸_撒米",
+          "state": "undone"
+        },
+        {
+          "not": {
+            "narrative": "scenario_义庄镇尸",
+            "state": "all_done",
+            "reached": true
+          }
+        }
+      ],
+      "data": {
+        "graphId": "寻狗_镇尸_撒米"
+      },
+      "planes": [
+        "normal"
+      ]
+    },
+    {
+      "id": "hs_镇尸_墨斗",
+      "type": "inspect",
+      "label": "扯墨斗线，在两尸中间绷一道",
+      "x": 790.0,
+      "y": 470.0,
+      "interactionRange": 70.0,
+      "conditions": [
+        {
+          "narrative": "scenario_义庄镇尸",
+          "state": "entered",
+          "reached": true
+        },
+        {
+          "narrative": "wrap_镇尸_墨斗",
+          "state": "undone"
+        },
+        {
+          "not": {
+            "narrative": "scenario_义庄镇尸",
+            "state": "all_done",
+            "reached": true
+          }
+        }
+      ],
+      "data": {
+        "graphId": "寻狗_镇尸_墨斗"
+      },
+      "planes": [
+        "normal"
+      ]
+    },
+    {
+      "id": "hs_镇尸_石子",
+      "type": "inspect",
+      "label": "捡七颗石子，按进尸背",
+      "x": 472.9,
+      "y": 358.7,
+      "interactionRange": 70.0,
+      "conditions": [
+        {
+          "narrative": "scenario_义庄镇尸",
+          "state": "entered",
+          "reached": true
+        },
+        {
+          "narrative": "wrap_镇尸_石子",
+          "state": "undone"
+        },
+        {
+          "not": {
+            "narrative": "scenario_义庄镇尸",
+            "state": "all_done",
+            "reached": true
+          }
+        }
+      ],
+      "data": {
+        "graphId": "寻狗_镇尸_石子"
+      },
+      "planes": [
+        "normal"
+      ]
+    },
+    {
+      "id": "hs_镇尸_剪子",
+      "type": "inspect",
+      "label": "抄供桌上的剪子，横在中间",
+      "x": 740.0,
+      "y": 230.0,
+      "interactionRange": 70.0,
+      "conditions": [
+        {
+          "narrative": "scenario_义庄镇尸",
+          "state": "entered",
+          "reached": true
+        },
+        {
+          "narrative": "wrap_镇尸_剪子",
+          "state": "undone"
+        },
+        {
+          "not": {
+            "narrative": "scenario_义庄镇尸",
+            "state": "all_done",
+            "reached": true
+          }
+        }
+      ],
+      "data": {
+        "graphId": "寻狗_镇尸_剪子"
+      },
+      "planes": [
+        "normal"
+      ]
+    },
+    {
+      "id": "hs_停尸凳",
+      "type": "inspect",
+      "label": "空了的停尸凳",
+      "x": 300.6,
+      "y": 300.0,
+      "interactionRange": 70.0,
+      "data": {},
+      "conditions": [
+        {
+          "narrative": "flow_xungou_main",
+          "state": "s09_songhuo",
+          "reached": true
+        }
+      ],
+      "conditionHidesEntity": true,
+      "planes": [
+        "normal"
+      ]
+    },
+    {
+      "id": "T_出义庄",
+      "type": "transition",
+      "label": "出去",
+      "x": 430.0,
+      "y": 548.0,
+      "interactionRange": 56.0,
+      "data": {
+        "targetScene": "雾津街头",
+        "targetSpawnPoint": "from_yizhuang"
+      }
+    },
+    {
+      "id": "hs_背尸_空凳",
+      "type": "inspect",
+      "label": "空着的停尸凳",
+      "x": 630.0,
+      "y": 350.0,
+      "interactionRange": 70.0,
+      "conditions": [
+        {
+          "plane": "背尸"
+        }
+      ],
+      "conditionHidesEntity": true,
+      "planes": [
+        "背尸"
+      ],
+      "data": {
+        "actions": [
+          {
+            "type": "startDialogueGraph",
+            "params": {
+              "graphId": "义庄_背尸落凳"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc_义庄门口拦活",
+      "name": "袖手的老汉",
+      "x": 520.0,
+      "y": 490.0,
+      "interactionRange": 64.0,
+      "animFile": "/resources/runtime/animation/npc_coolie_c_anim/anim.json",
+      "initialAnimState": "idle",
+      "initialFacing": "left",
+      "dialogueGraphId": "寻狗_义庄门口拦活",
+      "dialogueCameraZoom": 1.5,
+      "conditions": [
+        {
+          "narrative": "flow_xungou_main",
+          "state": "state_2",
+          "reached": true
+        },
+        {
+          "not": {
+            "narrative": "flow_xungou_main",
+            "state": "s02_beishi",
+            "reached": true
+          }
+        },
+        {
+          "any": [
+            {
+              "narrative": "flow_背尸_零工活",
+              "state": "looking"
+            },
+            {
+              "narrative": "flow_背尸_零工活",
+              "state": "accepted"
+            },
+            {
+              "narrative": "flow_背尸_零工活",
+              "state": "carrying"
+            },
+            {
+              "narrative": "flow_背尸_零工活",
+              "state": "placed"
+            }
+          ]
+        }
+      ],
+      "conditionHidesEntity": true
+    },
+    {
+      "id": "npc_管事",
+      "name": "义庄管事",
+      "x": 547.1,
+      "y": 329.6,
+      "interactionRange": 64.0,
+      "animFile": "/resources/runtime/animation/npc_yizhuang_keeper_anim/anim.json",
+      "initialAnimState": "idle",
+      "dialogueGraphId": "寻狗_管事义庄内",
+      "dialogueCameraZoom": 1.45
+    }
+  ],
+  "depthConfig": {
+    "depth_map": "raw_depth_rg.png",
+    "collision_map": "collision.png",
+    "M": {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.7071067811865476,
+          -0.7071067811865475
+        ],
+        [
+          0.0,
+          0.7071067811865475,
+          0.7071067811865476
+        ]
+      ],
+      "ppu": 450.56,
+      "cx": 1024.0,
+      "cy": 571.5
+    },
+    "depth_mapping": {
+      "invert": false,
+      "scale": 3.350677814674378,
+      "offset": -2.4721201492309572
+    },
+    "shader": {
+      "depth_per_sy": 0.002219460227272727
+    },
+    "collision": {
+      "x_min": -2.2727272510528564,
+      "z_min": -2.1438955443212304,
+      "cell_size": 0.028618474162618993,
+      "grid_width": 160,
+      "grid_height": 142,
+      "height_offset": 0.0
+    },
+    "depth_tolerance": 0.05,
+    "floor_offset": 0.0
+  }
+}

@@ -1,0 +1,535 @@
+[
+  {
+    "id": "opening_01",
+    "group": "opening",
+    "type": "main",
+    "title": "听张叨叨摆书",
+    "description": "张叨叨又在茶馆里说书。先坐下听一耳朵，看看今天城里又传什么怪话。",
+    "preconditions": [],
+    "completionConditions": [
+      {
+        "flag": "heard_teahouse_story"
+      }
+    ],
+    "rewards": [],
+    "nextQuests": [
+      {
+        "questId": "opening_02",
+        "conditions": []
+      }
+    ]
+  },
+  {
+    "id": "opening_02",
+    "group": "opening",
+    "type": "main",
+    "title": "和瞎子李搭话",
+    "description": "瞎子李刚进茶馆。你早听说这老瞎子走南闯北，嘴里没几句真话，但也许真能教你一门吃饭的手艺。",
+    "preconditions": [],
+    "completionConditions": [
+      {
+        "flag": "got_iron_box"
+      }
+    ],
+    "rewards": [],
+    "nextQuests": [
+      {
+        "questId": "opening_03",
+        "conditions": []
+      }
+    ]
+  },
+  {
+    "id": "opening_03",
+    "group": "opening",
+    "type": "main",
+    "title": "把铁盒子藏去城隍庙",
+    "description": "盒子揣在身上总让人心里发痒。先把它藏到破烂城隍庙里，七天后再来取。",
+    "preconditions": [],
+    "completionConditions": [
+      {
+        "flag": "box_hidden_in_temple"
+      }
+    ],
+    "rewards": [],
+    "nextQuests": [
+      {
+        "questId": "opening_04",
+        "conditions": []
+      }
+    ]
+  },
+  {
+    "id": "opening_04",
+    "group": "opening",
+    "type": "main",
+    "title": "摸进去瞧一眼",
+    "description": "动静过去了。摸回庙门口，看看墙边月影下有什么——然后赶紧离开。",
+    "preconditions": [],
+    "completionConditions": [
+      {
+        "flag": "saw_standing_shadow"
+      }
+    ],
+    "rewards": [],
+    "nextQuests": [
+      {
+        "questId": "opening_05",
+        "conditions": []
+      }
+    ]
+  },
+  {
+    "id": "opening_05",
+    "group": "opening",
+    "type": "main",
+    "title": "等天亮再回城隍庙",
+    "description": "今晚这事太邪门了。天一亮，再回城隍庙看看盒子和那个女人到底怎么回事。",
+    "preconditions": [],
+    "completionConditions": [
+      {
+        "flag": "day_2_started"
+      }
+    ],
+    "rewards": [],
+    "nextQuests": [
+      {
+        "questId": "opening_06",
+        "conditions": []
+      }
+    ]
+  },
+  {
+    "id": "opening_06",
+    "group": "opening",
+    "type": "main",
+    "title": "回城隍庙看看",
+    "description": "天亮了，该回去看看昨晚那地方到底怎么了。盒子和那女人……",
+    "preconditions": [],
+    "completionConditions": [
+      {
+        "flag": "saw_hanged_woman"
+      }
+    ],
+    "rewards": []
+  },
+  {
+    "id": "支线-归还小孩铁环-归还铁环",
+    "group": "支线-铁环",
+    "type": "side",
+    "title": "归还铁环",
+    "description": "把铁环换给小孩。",
+    "preconditions": [],
+    "completionConditions": [],
+    "rewards": [],
+    "nextQuests": [],
+    "sideType": "commission"
+  },
+  {
+    "id": "支线-抓水猴子-查看水边情况",
+    "group": "支线-抓水猴子",
+    "type": "side",
+    "title": "查看水边情况",
+    "description": "去水边查看水猴子迹象。",
+    "preconditions": [],
+    "completionConditions": [],
+    "rewards": [
+      {
+        "type": "setFlag",
+        "params": {
+          "key": "Q抓水猴子_禁止离开码头",
+          "value": false
+        }
+      }
+    ],
+    "nextQuests": [
+      {
+        "questId": "支线-抓水猴子-找回漂浮的箱子",
+        "conditions": []
+      }
+    ],
+    "sideType": "investigation",
+    "acceptActions": [
+      {
+        "type": "setFlag",
+        "params": {
+          "key": "Q抓水猴子_禁止离开码头",
+          "value": true
+        }
+      }
+    ]
+  },
+  {
+    "id": "支线-抓水猴子-找回漂浮的箱子",
+    "group": "支线-抓水猴子",
+    "type": "side",
+    "title": "给洋人找回漂浮的箱子",
+    "description": "你火急火燎的跳下水，想要第一个捞回洋人的箱子。",
+    "preconditions": [],
+    "completionConditions": [],
+    "acceptActions": [],
+    "rewards": [],
+    "nextQuests": []
+  },
+  {
+    "id": "xg01_tingshu",
+    "group": "xungou",
+    "type": "main",
+    "title": "听先生说书",
+    "description": "茶馆里先生正说到「大旱魃」。挤进人缝，把「李天狗」「神仙顶」这两个词听明白。",
+    "preconditions": [],
+    "completionConditions": [
+      {
+        "narrative": "flow_xungou_main",
+        "state": "state_2",
+        "reached": true
+      }
+    ],
+    "rewards": [],
+    "nextQuests": [
+      {
+        "questId": "xg02_beishi",
+        "conditions": []
+      }
+    ]
+  },
+  {
+    "id": "xg02_beishi",
+    "group": "xungou",
+    "type": "main",
+    "title": "夜背崖墓尸",
+    "description": "面生的雇主寻来找「背尸的」。那具尸恶名在外，正经班子全推了，可工钱已经勾住了你的脚。",
+    "preconditions": [],
+    "completionConditions": [
+      {
+        "narrative": "flow_xungou_main",
+        "state": "s02_beishi",
+        "reached": true
+      }
+    ],
+    "rewards": [],
+    "nextQuests": [
+      {
+        "questId": "xg03_chuiniu",
+        "conditions": []
+      }
+    ]
+  },
+  {
+    "id": "xg03_chuiniu",
+    "group": "xungou",
+    "type": "main",
+    "title": "回茶馆缓口气",
+    "description": "那趟背尸邪门得很。回茶馆找人说道说道——顺便把它吹得像样点。",
+    "preconditions": [],
+    "completionConditions": [
+      {
+        "narrative": "flow_xungou_main",
+        "state": "s03_chuiniu",
+        "reached": true
+      }
+    ],
+    "rewards": [],
+    "nextQuests": [
+      {
+        "questId": "xg04_pozi",
+        "conditions": []
+      }
+    ]
+  },
+  {
+    "id": "xg04_pozi",
+    "group": "xungou",
+    "type": "main",
+    "title": "第一单：婆子家的动静",
+    "description": "一个婆子找上门，说院里夜夜有动静，钱已经拍在桌上。这是头一个主动找上门的活路。",
+    "preconditions": [],
+    "completionConditions": [
+      {
+        "narrative": "flow_xungou_main",
+        "state": "s04_pozi",
+        "reached": true
+      }
+    ],
+    "rewards": [],
+    "nextQuests": [
+      {
+        "questId": "xg05_hebian",
+        "conditions": []
+      }
+    ]
+  },
+  {
+    "id": "xg05_hebian",
+    "group": "xungou",
+    "type": "main",
+    "title": "连夜回城",
+    "description": "活路办完了，钱也到手了。趁天没亮透，从河滩绕回城去。",
+    "preconditions": [],
+    "completionConditions": [
+      {
+        "narrative": "flow_xungou_main",
+        "state": "s05_hebian",
+        "reached": true
+      }
+    ],
+    "rewards": [],
+    "nextQuests": [
+      {
+        "questId": "xg06_laoxiang",
+        "conditions": []
+      }
+    ]
+  },
+  {
+    "id": "xg06_laoxiang",
+    "group": "xungou",
+    "type": "main",
+    "title": "码头的洋热闹",
+    "description": "码头来了条洋船，听说卸货卸出了乱子。去瞧瞧——有热闹的地方就有铜钱。",
+    "preconditions": [],
+    "completionConditions": [
+      {
+        "narrative": "flow_xungou_main",
+        "state": "s06_laoxiang",
+        "reached": true
+      }
+    ],
+    "rewards": [],
+    "nextQuests": [
+      {
+        "questId": "xg08_xiangdao",
+        "conditions": []
+      }
+    ]
+  },
+  {
+    "id": "xg07_kujing",
+    "group": "xungou",
+    "type": "side",
+    "sideType": "commission",
+    "title": "枯井里的「狗」",
+    "description": "土地庙后枯井掉了条狗，叫了两天两夜，夜里像小孩哭。给几个钱，问谁能捞上来。",
+    "preconditions": [
+      {
+        "narrative": "scenario_枯井",
+        "state": "hired",
+        "reached": true
+      }
+    ],
+    "completionConditions": [
+      {
+        "narrative": "scenario_枯井",
+        "state": "fled",
+        "reached": true
+      }
+    ],
+    "rewards": [],
+    "nextQuests": []
+  },
+  {
+    "id": "xg08_xiangdao",
+    "group": "xungou",
+    "type": "main",
+    "title": "重金寻向导",
+    "description": "那对洋人在找进神仙顶的向导，重金。去茶馆和街上探探风声，再掂量掂量自己这副行头。",
+    "preconditions": [],
+    "completionConditions": [
+      {
+        "narrative": "flow_xungou_main",
+        "state": "s08_xiangdao",
+        "reached": true
+      }
+    ],
+    "rewards": [],
+    "nextQuests": [
+      {
+        "questId": "xg09_songhuo",
+        "conditions": []
+      }
+    ]
+  },
+  {
+    "id": "xg09_songhuo",
+    "group": "xungou",
+    "type": "main",
+    "title": "送货到阎王岭",
+    "description": "一个面生的雇主出高价：把一个沉甸甸的包袱送到阎王岭山口的歇脚棚。别问里头是啥。",
+    "preconditions": [],
+    "completionConditions": [
+      {
+        "narrative": "flow_xungou_main",
+        "state": "s09_songhuo",
+        "reached": true
+      }
+    ],
+    "rewards": [],
+    "nextQuests": [
+      {
+        "questId": "xg10_zhaomu",
+        "conditions": []
+      }
+    ]
+  },
+  {
+    "id": "xg10_zhaomu",
+    "group": "xungou",
+    "type": "main",
+    "title": "克拉拉的定钱",
+    "description": "从阎王岭回到城里，街角灯下那洋女人克拉拉候着你。她要进神仙顶，开价三十块大洋、先付十块定钱，要你做向导。",
+    "preconditions": [],
+    "completionConditions": [
+      {
+        "narrative": "flow_xungou_main",
+        "state": "s11_zhaomu",
+        "reached": true
+      }
+    ],
+    "rewards": [],
+    "nextQuests": [
+      {
+        "questId": "xg11_shouye",
+        "conditions": []
+      },
+      {
+        "questId": "xg12_chufa",
+        "conditions": []
+      }
+    ]
+  },
+  {
+    "id": "xg10_yizhuang",
+    "group": "xungou",
+    "type": "side",
+    "sideType": "commission",
+    "title": "义庄的两具尸",
+    "description": "义庄管事脸色发白来寻你：两具尸在地上扭着、揪着、互相压。守夜的吓跑了，正经先生请不起。",
+    "preconditions": [
+      {
+        "narrative": "scenario_义庄镇尸",
+        "state": "entered",
+        "reached": true
+      }
+    ],
+    "completionConditions": [
+      {
+        "narrative": "scenario_义庄镇尸",
+        "state": "all_done",
+        "reached": true
+      }
+    ],
+    "rewards": [],
+    "nextQuests": []
+  },
+  {
+    "id": "xg11_shouye",
+    "group": "xungou",
+    "type": "side",
+    "sideType": "commission",
+    "title": "城隍庙守半夜",
+    "description": "出发前还有桩杂活：独自在城隍庙守半夜。庙里停着一具无名女尸，灵前长明灯整夜不能灭。",
+    "preconditions": [],
+    "completionConditions": [
+      {
+        "narrative": "wrap_守夜",
+        "state": "done",
+        "reached": true
+      }
+    ],
+    "rewards": [],
+    "nextQuests": []
+  },
+  {
+    "id": "xg12_chufa",
+    "group": "xungou",
+    "type": "main",
+    "title": "置办行头 · 城门口汇合",
+    "description": "克拉拉的定钱收了。用攒下的钱置一身「道士皮」，天亮前到城门口与洋人夫妇汇合。",
+    "preconditions": [],
+    "completionConditions": [
+      {
+        "narrative": "flow_xungou_main",
+        "state": "s12_chufa",
+        "reached": true
+      }
+    ],
+    "rewards": [],
+    "nextQuests": []
+  },
+  {
+    "id": "背尸-零工路倒",
+    "group": "背尸零活",
+    "type": "side",
+    "title": "拉具路倒去义庄",
+    "description": "义庄门口一个老汉塞来的头一单腌臜活：巷口墙根一具没人认的路倒，自己去背来搁停尸凳上，找管事结五文。",
+    "preconditions": [
+      {
+        "narrative": "flow_背尸_零工活",
+        "state": "accepted",
+        "reached": true
+      }
+    ],
+    "completionConditions": [
+      {
+        "narrative": "flow_背尸_零工活",
+        "state": "delivered",
+        "reached": true
+      }
+    ],
+    "rewards": [],
+    "nextQuests": []
+  },
+  {
+    "id": "背尸-淹尸送义庄",
+    "group": "背尸零活",
+    "type": "repeatable",
+    "runArchetype": "flow_背尸_淹尸活",
+    "title": "拉个泡涨的去义庄",
+    "description": "河头捞起个泡涨的淹死人，官面验过没人认。工头出八文：从码头巷口背去义庄，搁上停尸凳，找管事结钱。",
+    "preconditions": [],
+    "completionConditions": [],
+    "rewards": [],
+    "nextQuests": []
+  },
+  {
+    "id": "主线_闲逛阶段A",
+    "group": "xungou",
+    "type": "main",
+    "title": "闲逛找点吃的",
+    "description": "听了半天书，是时候[c:emphasis]找点吃的[/c]填饱肚子了。",
+    "preconditions": [
+      {
+        "narrative": "flow_xungou_main",
+        "state": "state_2"
+      }
+    ],
+    "completionConditions": [
+      {
+        "narrative": "flow_xungou_main",
+        "state": "state_3"
+      }
+    ],
+    "acceptActions": [],
+    "rewards": [],
+    "nextQuests": [],
+    "objectives": [
+      {
+        "id": "obj1",
+        "text": "包子铺看看",
+        "guidance": [
+          {
+            "kind": "worldMarker",
+            "sceneId": "雾津街头",
+            "label": "目标",
+            "entityKind": "hotspot",
+            "entityId": "主线_吃饭点A",
+            "offscreenArrow": true,
+            "showDistance": true
+          }
+        ]
+      }
+    ],
+    "announce": "banner",
+    "autoFocus": true
+  }
+]

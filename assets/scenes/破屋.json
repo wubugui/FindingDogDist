@@ -1,0 +1,121 @@
+{
+  "id": "破屋",
+  "name": "破屋",
+  "worldWidth": 1048.0,
+  "camera": {
+    "zoom": 0.9,
+    "pixelsPerUnit": 1.0
+  },
+  "backgrounds": [
+    {
+      "image": "background.png",
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "bgm": "bgm_placeholder_low_tension",
+  "ambientSounds": [
+    "amb_night_forest_loop"
+  ],
+  "spawnPoint": {
+    "x": 520.7,
+    "y": 382.8
+  },
+  "spawnPoints": {
+    "from_jie": {
+      "x": 520.7,
+      "y": 382.8
+    }
+  },
+  "npcs": [],
+  "hotspots": [
+    {
+      "id": "hs_验缢死尸",
+      "type": "inspect",
+      "label": "割下来的缢死尸",
+      "x": 528.9,
+      "y": 421.9,
+      "interactionRange": 120.0,
+      "conditions": [
+        {
+          "not": {
+            "flag": "beishi_carrying"
+          }
+        }
+      ],
+      "conditionHidesEntity": true,
+      "data": {
+        "graphId": "寻狗_验缢死尸"
+      },
+      "displayImage": {
+        "image": "/resources/runtime/images/corpses/back_carry/final/hanging_mark_corpse.png",
+        "worldWidth": 160.0,
+        "worldHeight": 82.0,
+        "spriteSort": "back"
+      }
+    },
+    {
+      "id": "T_出破屋",
+      "type": "transition",
+      "label": "扛尸出门·绕小路",
+      "x": 250.0,
+      "y": 470.0,
+      "interactionRange": 95.0,
+      "conditions": [
+        {
+          "flag": "beishi_carrying"
+        }
+      ],
+      "data": {
+        "targetScene": "野道",
+        "targetSpawnPoint": "from_powu"
+      }
+    }
+  ],
+  "zones": [],
+  "worldHeight": 584.89,
+  "depthConfig": {
+    "depth_map": "raw_depth_rg.png",
+    "collision_map": "collision.png",
+    "M": {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.6427876096865394,
+          -0.766044443118978
+        ],
+        [
+          0.0,
+          0.766044443118978,
+          0.6427876096865394
+        ]
+      ],
+      "ppu": 450.56,
+      "cx": 1024.0,
+      "cy": 571.5
+    },
+    "depth_mapping": {
+      "invert": false,
+      "scale": 2.6535496975898742,
+      "offset": -1.78757820854187
+    },
+    "shader": {
+      "depth_per_sy": 0.002645049699472234
+    },
+    "collision": {
+      "x_min": -2.2727272510528564,
+      "z_min": -1.633438536536655,
+      "cell_size": 0.02868218326876791,
+      "grid_width": 160,
+      "grid_height": 122,
+      "height_offset": 0.0
+    },
+    "depth_tolerance": 0.05,
+    "floor_offset": 0.0
+  }
+}

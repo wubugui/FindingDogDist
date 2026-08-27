@@ -1,0 +1,110 @@
+{
+  "id": "城门口",
+  "name": "城门口 · 拂晓",
+  "worldWidth": 2000,
+  "camera": {
+    "zoom": 0.8,
+    "pixelsPerUnit": 1.0
+  },
+  "backgrounds": [
+    {
+      "image": "background.png",
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "ambientSounds": [
+    "阴风"
+  ],
+  "spawnPoint": {
+    "x": 813.95,
+    "y": 944.77
+  },
+  "spawnPoints": {
+    "entry": {
+      "x": 813.95,
+      "y": 944.77
+    }
+  },
+  "hotspots": [
+    {
+      "id": "hs_城门雾路",
+      "type": "inspect",
+      "label": "门外那条进山的路",
+      "x": 1308.14,
+      "y": 218.02,
+      "interactionRange": 130.81,
+      "data": {
+        "text": "雾压着路，看不到头。就是这条路——过了岭，就是神仙顶。"
+      }
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc_埃德加",
+      "characterId": "edgar",
+      "x": 1017.44,
+      "y": 683.14,
+      "interactionRange": 101.74,
+      "initialAnimState": "埃德加_走路",
+      "initialFacing": "left",
+      "dialogueGraphId": "寻狗_城门汇合",
+      "dialogueCameraZoom": 1.45
+    },
+    {
+      "id": "npc_克拉拉城门",
+      "characterId": "clara",
+      "x": 1133.72,
+      "y": 726.74,
+      "interactionRange": 101.74,
+      "initialAnimState": "克拉拉_走路",
+      "initialFacing": "left",
+      "dialogueGraphId": "寻狗_城门汇合",
+      "dialogueCameraZoom": 1.45
+    }
+  ],
+  "depthConfig": {
+    "depth_map": "raw_depth_rg.png",
+    "collision_map": "collision.png",
+    "M": {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.7071067811865476,
+          -0.7071067811865475
+        ],
+        [
+          0.0,
+          0.7071067811865475,
+          0.7071067811865476
+        ]
+      ],
+      "ppu": 450.56,
+      "cx": 1024.0,
+      "cy": 571.5
+    },
+    "depth_mapping": {
+      "invert": false,
+      "scale": 3.9697675373077397,
+      "offset": -2.6247652603149416
+    },
+    "shader": {
+      "depth_per_sy": 0.002219460227272727
+    },
+    "collision": {
+      "x_min": -2.2727272510528564,
+      "z_min": -1.8334970705615334,
+      "cell_size": 0.028616934373466643,
+      "grid_width": 160,
+      "grid_height": 129,
+      "height_offset": 0.0
+    },
+    "depth_tolerance": 0.05,
+    "floor_offset": 0.0
+  }
+}

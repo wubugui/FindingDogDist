@@ -1,0 +1,170 @@
+{
+  "id": "枯井土地庙",
+  "name": "土地庙后 · 枯井",
+  "worldWidth": 1376.0,
+  "worldHeight": 768.0,
+  "camera": {
+    "zoom": 1.2,
+    "pixelsPerUnit": 1.0
+  },
+  "backgrounds": [
+    {
+      "image": "background.png",
+      "x": 0,
+      "y": 0
+    }
+  ],
+  "bgm": "bgm_placeholder_dread_piano",
+  "ambientSounds": [
+    "amb_night_forest_loop"
+  ],
+  "spawnPoint": {
+    "x": 820.0,
+    "y": 660.0
+  },
+  "spawnPoints": {
+    "entry": {
+      "x": 820.0,
+      "y": 660.0
+    }
+  },
+  "zones": [
+    {
+      "id": "z_井边哭声",
+      "polygon": [
+        {
+          "x": 640.0,
+          "y": 380.0
+        },
+        {
+          "x": 1080.0,
+          "y": 380.0
+        },
+        {
+          "x": 1080.0,
+          "y": 560.0
+        },
+        {
+          "x": 640.0,
+          "y": 560.0
+        }
+      ],
+      "conditions": [
+        {
+          "narrative": "scenario_枯井",
+          "state": "hired"
+        }
+      ],
+      "onEnter": [
+        {
+          "type": "emitNarrativeSignal",
+          "params": {
+            "sourceType": "zone",
+            "sourceId": "枯井土地庙:z_井边哭声",
+            "signal": "kujing_intro_entered"
+          }
+        }
+      ]
+    }
+  ],
+  "hotspots": [
+    {
+      "id": "hs_枯井",
+      "type": "inspect",
+      "label": "往井下看",
+      "x": 870.0,
+      "y": 290.0,
+      "interactionRange": 80.0,
+      "collisionPolygon": [
+        {
+          "x": -80.0,
+          "y": -50.0
+        },
+        {
+          "x": 80.0,
+          "y": -50.0
+        },
+        {
+          "x": 80.0,
+          "y": 10.0
+        },
+        {
+          "x": -80.0,
+          "y": 10.0
+        }
+      ],
+      "collisionPolygonLocal": true,
+      "data": {
+        "graphId": "寻狗_枯井往下看"
+      }
+    },
+    {
+      "id": "hs_土地庙",
+      "type": "inspect",
+      "label": "塌了半边的土地庙",
+      "x": 350.0,
+      "y": 420.0,
+      "interactionRange": 80.0,
+      "data": {
+        "text": "庙塌了半边，土地公的脸叫雨水淋花了，看不出喜怒。香炉里插着几根新香——这种地方，还有人来上香。"
+      }
+    },
+    {
+      "id": "T_回城",
+      "type": "transition",
+      "label": "回城",
+      "x": 1180.0,
+      "y": 680.0,
+      "interactionRange": 64.0,
+      "data": {
+        "targetScene": "雾津街头",
+        "targetSpawnPoint": "from_event"
+      }
+    }
+  ],
+  "npcs": [],
+  "depthConfig": {
+    "depth_map": "raw_depth_rg.png",
+    "collision_map": "collision.png",
+    "M": {
+      "R": [
+        [
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.7071067811865476,
+          -0.7071067811865475
+        ],
+        [
+          0.0,
+          0.7071067811865475,
+          0.7071067811865476
+        ]
+      ],
+      "ppu": 450.56,
+      "cx": 1024.0,
+      "cy": 571.5
+    },
+    "depth_mapping": {
+      "invert": false,
+      "scale": 2.6288520957946777,
+      "offset": -1.352555735206604
+    },
+    "shader": {
+      "depth_per_sy": 0.002219460227272727
+    },
+    "collision": {
+      "x_min": -2.2727272510528564,
+      "z_min": -1.855740238450552,
+      "cell_size": 0.028600977840038223,
+      "grid_width": 160,
+      "grid_height": 129,
+      "height_offset": 0.0
+    },
+    "depth_tolerance": 0.05,
+    "floor_offset": 0.0
+  }
+}

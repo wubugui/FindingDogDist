@@ -1,0 +1,158 @@
+{
+  "initialScene": "teahouse",
+  "initialQuest": "xg01_tingshu",
+  "fallbackScene": "teahouse",
+  "startupFlags": {
+    "archive_book_book_erta_guide": true,
+    "GameConfig_Demo主线剧情": true
+  },
+  "viewport": {
+    "width": 1024,
+    "height": 768
+  },
+  "windowSize": {
+    "width": 1024,
+    "height": 768
+  },
+  "entityPixelDensityMatch": true,
+  "entityPixelDensityMatchBlurScale": 0.25,
+  "entityLighting": {
+    "enabled": true,
+    "shadowMode": "real",
+    "toneEnabled": true,
+    "defaultLightEnv": {
+      "key": {
+        "azimuthDeg": 125,
+        "elevationDeg": 55,
+        "color": [
+          1.0,
+          0.97,
+          0.92
+        ],
+        "intensity": 1.0
+      },
+      "ambient": {
+        "color": [
+          0.55,
+          0.6,
+          0.72
+        ],
+        "intensity": 1.0
+      },
+      "shadow": {
+        "enabled": true,
+        "darkness": 0.45,
+        "softness": 1.0
+      },
+      "toneStrength": 0.45,
+      "ao": {
+        "contact": 0.45,
+        "form": 0.25
+      }
+    }
+  },
+  "playerAvatar": {
+    "animManifest": "/resources/runtime/animation/player_anim/anim.json",
+    "stateMap": {
+      "idle": "idle",
+      "walk": "walk",
+      "run": "run",
+      "crouch": "crouch",
+      "crouchWalk": "slow_walk",
+      "gaze": "stand",
+      "jump": "jump",
+      "lie": "lie_down"
+    },
+    "portraitSlug": "player_carry_corpse_anim"
+  },
+  "playerActs": {
+    "crouch": {
+      "enabled": true,
+      "allowRun": false,
+      "speedScale": 0.45,
+      "enterMs": 250,
+      "exitMs": 300
+    },
+    "gaze": {
+      "enabled": true,
+      "speedScale": 0,
+      "holdMsToTrigger": 0,
+      "enterMs": 200,
+      "exitMs": 200
+    },
+    "lie": {
+      "enabled": true,
+      "freeAnywhere": false,
+      "enterMs": 700,
+      "exitMs": 900
+    },
+    "kick": {
+      "enabled": true,
+      "missActions": []
+    },
+    "jump": {
+      "enabled": true,
+      "durationMs": 480,
+      "arcHeight": 46
+    }
+  },
+  "textPalette": [
+    {
+      "id": "emphasis",
+      "label": "强调",
+      "color": "#ffcc66"
+    },
+    {
+      "id": "danger",
+      "label": "危险",
+      "color": "#b0644a"
+    },
+    {
+      "id": "rule",
+      "label": "规矩",
+      "color": "#ffaa44"
+    },
+    {
+      "id": "clue",
+      "label": "线索",
+      "color": "#8fae72"
+    },
+    {
+      "id": "item",
+      "label": "物件",
+      "color": "#ddccaa"
+    },
+    {
+      "id": "dim",
+      "label": "弱化",
+      "color": "#8e867a"
+    }
+  ],
+  "dayNight": {
+    "startAt": "11:00",
+    "phases": [
+      {
+        "id": "辰",
+        "from": "07:00",
+        "label": "辰时",
+        "daylight": true
+      },
+      {
+        "id": "午",
+        "from": "11:00",
+        "label": "午时",
+        "daylight": true
+      },
+      {
+        "id": "暮",
+        "from": "18:00",
+        "label": "向晚"
+      },
+      {
+        "id": "夜",
+        "from": "20:00",
+        "label": "入夜"
+      }
+    ]
+  }
+}
